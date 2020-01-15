@@ -7,13 +7,15 @@
 	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-	<div>
-		<h1>Blog do Joãozinho</h1>
-	</div>
+	<header class="classe_Header">
+		<center>
+			<h1>Blog do Joãozinho</h1>
+		</center>
+	</header>
 	{% for post in posts %}
-		<div>
-			<p>publicado em: {{ post.published_date }}</p>
-			<h1>{{ post.title }}</h1>
+		<div class="classe_Post">
+			<p class="classe_Publicado">publicado em: {{ post.published_date }}</p>
+			<h2>{{ post.title }}</h2>
 			<p>{{ post.text|linebreaksbr }}</p>
 		</div>
 	{% endfor %}
