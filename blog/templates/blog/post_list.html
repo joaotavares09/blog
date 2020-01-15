@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>My Blog</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css'}">
 </head>
 <body>
 	<div>
 		<h1>Blog do Joãozinho</h1>
 	</div>
+	
 	{% for post in posts %}
 		<div>
 			<p>publicado em: {{ post.published_date }}</p>
