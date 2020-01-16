@@ -3,11 +3,21 @@
 	{% block dinamico %}
 
 		{% for post in posts %}
-			<div class="classe_Post">
-				<p class="classe_Publicado">publicado em: {{ post.published_date }}</p>
-				<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-				<p>{{ post.text|linebreaksbr }}</p>
-			</div>
+
+			{% if user.is_authenticated and post.published_date == null %}
+				<div class="classe_Post">
+					<p class="classe_Publicado">publicado em: {{ post.published_date }}</p>
+					<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+					<p>{{ post.text|linebreaksbr }}</p>
+				</div>
+			
+			{% elif post.published_date %}
+				<div class="classe_Post">
+					<p class="classe_Publicado">publicado em: {{ post.published_date }}</p>
+					<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+					<p>{{ post.text|linebreaksbr }}</p>
+				</div>
+			{% endif %}
 		{% endfor %}
 
 	{% endblock %}

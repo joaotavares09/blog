@@ -4,18 +4,19 @@
 	<div class="post">
 		{% if user.is_authenticated  %}
 			<a class="classe_boton_link" href="{% url 'post_edit' pk=post.pk %}">Editar Post</a>
+			{% if post.published_date == null  %}<br>
+				<a class="classe_boton_link" href="{% url 'post_publicar' pk=post.pk %}">Publicar</a>
+			{% endif %}
+				{% if post.published_date %}
+					<div class="date">
+						{{ post.published_date }}
+					</div>
+				{% endif %}
+				
+				<h1>{{ post.title }}</h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			{% else %}
 		{% endif %}
 
-		{% if post.published_date %}
-			<div class="date">
-				{{ post.published_date }}
-			</div>
-			{% else %}
-				<center>
-					<h1>Área Restrita</h1>
-				</center>
-		{% endif %}
-		<h1>{{ post.title }}</h1>
-		<p>{{ post.text|linebreaksbr }}</p>
 	</div>
 {% endblock %}
