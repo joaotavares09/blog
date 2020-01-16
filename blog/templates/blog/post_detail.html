@@ -4,6 +4,7 @@
 	<div class="post">
 		{% if user.is_authenticated  %}
 			<a class="classe_boton_link" href="{% url 'post_edit' pk=post.pk %}">Editar Post</a>
+			<a onclick="return confirm('Deseja Mesmo?')" class="classe_boton_link" href="{% url 'post_remove' pk=post.pk %}">Deletar Post</a>
 			{% if post.published_date == null  %}<br>
 				<a class="classe_boton_link" href="{% url 'post_publicar' pk=post.pk %}">Publicar</a>
 			{% endif %}
