@@ -10,6 +10,10 @@
 			<div class="date">
 				{{ post.published_date }}
 			</div>
+			{% else %}
+				<center>
+					<h1>Área Restrita</h1>
+				</center>
 		{% endif %}
 		<h1>{{ post.title }}</h1>
 		<p>{{ post.text|linebreaksbr }}</p>
