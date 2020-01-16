@@ -11,8 +11,17 @@
 		<center>
 			<h1>Blog do Joãozinho</h1>
 		</center>
+		<button type="button" class="btn btn-light">
+			<a class="classe_boton_link" href="{% url 'post_list' %}">Home</a>
+		</button>
 	</header>
-	<a href="{% url 'post_new' %}">Novo Post</a>
+	
+	{% if user.is_authenticated  %}
+		<a href="{% url 'post_new' %}">
+			<h2>Novo Post</h2>
+		</a>
+	{% endif %}
+
 	{% block dinamico %}
 	{% endblock %}
 </body>
