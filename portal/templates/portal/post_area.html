@@ -1,0 +1,15 @@
+{% extends 'portal/base.html' %}
+
+{% block area %}
+	<center>
+		<h2>Área de Tipos de Noticia</h2>
+		{% for post in posts %}
+			{% if user.is_authenticated %}
+				<div class="classe_Post">
+					<p class="classe_Publicado">Tipo de Notícia: {{ post.descricao }}</p>
+					<h2><a href="{% url 'area_post_detail' pk=post.pk %}"></a></h2>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</center>
+{% endblock %}

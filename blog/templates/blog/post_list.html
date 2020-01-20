@@ -9,6 +9,11 @@
 					<p class="classe_Publicado">publicado em: {{ post.published_date }}</p>
 					<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 					<p>{{ post.text|linebreaksbr }}</p>
+					
+					{% if post.photo %}
+						<img src="{{ post.photo.url }}" alt="title"/>
+					{% endif %}
+
 				</div>
 			
 			{% elif post.published_date %}
@@ -16,6 +21,9 @@
 					<p class="classe_Publicado">publicado em: {{ post.published_date }}</p>
 					<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 					<p>{{ post.text|linebreaksbr }}</p>
+					{% if post.photo %}
+						<img src="{{ post.photo.url }}" alt="title"/>
+					{% endif %}
 				</div>
 			{% endif %}
 		{% endfor %}

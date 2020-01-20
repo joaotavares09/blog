@@ -1,0 +1,37 @@
+	{% extends 'portal/base.html' %}
+	
+	{% block dinamico %}
+	<center>
+		<h2>Notícias</h2>
+		{% for post in posts %}
+			{% if user.is_authenticated and post.published_date == null %}
+
+				<div class="classe_Post">
+					<p class="classe_Publicado">publicado em: {{ post.published_date }}</p><br>
+					<h2><a href="{% url 'area_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+					<p>{{ post.text|linebreaksbr }}</p>
+					{% if post.photo %}
+						<img src="{{ post.photo.url }}" alt="title"/>
+					{% endif %}
+				</div>
+			
+			{% elif post.published_date %}
+				<div class="classe_Post">
+					<p class="classe_Publicado">publicado em: {{ post.published_date }}</p><br><br><br>
+					{% if post.photo %}
+						<img src="{{ post.photo.url }}" alt="title"/>
+					{% endif %}
+					<h2><a href="{% url 'area_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+					{% if user.is_authenticated  %}
+						<p>{{ post.text|linebreaksbr }}</p>
+						<button>
+							<a href="{% url 'area_edit' pk=post.pk %}">Editar Notícia</a>
+						</button>
+					{% endif %}
+				</div>
+			{% endif %}
+		{% endfor %}
+	</center>
+	{% endblock %}
+</body>
+</html>

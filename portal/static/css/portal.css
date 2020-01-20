@@ -1,0 +1,46 @@
+body{
+	background-color: #E2F5F6;
+}
+h1{
+	color: #E2F5F6;
+	font-family:Arial, Helvetica, sans-serif;
+}
+h2{
+	color: #051617;
+	font-family:Arial, Helvetica, sans-serif;
+	/*font-family:courier,arial,helvetica;*/
+}
+h3{
+	color: #E2F5F6;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.classe_Header{
+	background-color: #051617;
+	padding: 30px;
+	margin: 0px 80px 0px 80px;
+}
+.classe_Post{
+	background-color: #D8D8D8;
+	padding: 50px;
+	margin: 15px 80px 15px 80px;
+}
+.classe_Publicado{
+	float: right;
+	font-size: 13px;
+}
+.classe_Footer{
+	background-color: #051617;
+	padding: 10px;
+	margin: 15px 0px 15px 0px;
+}
+.form{
+	background-color: #D8D8D8;
+	margin: 15px 80px 15px 80px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.post-form{
+	background-color: #D8D8D8;
+	margin: 15px 80px 15px 80px;
+	font-family:Arial, Helvetica, sans-serif;
+}

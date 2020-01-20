@@ -1,0 +1,17 @@
+{% extends 'portal/base.html' %}
+
+{% block dinamico %}
+{% if user.is_authenticated  %}
+<center>
+	<div class="post">
+			<button>
+				<a href="{% url 'area_post_edit' pk=post.pk %}">Editar Área</a>
+			</button>
+			<button>
+				<a onclick="return confirm('Deseja Mesmo?')" href="{% url 'area_post_remove' pk=post.pk %}">Deletar Área</a>
+			</button>
+			<h2>{{ post.descricao }}</h2>
+	</div>
+</center>
+{% endif %}
+{% endblock %}
