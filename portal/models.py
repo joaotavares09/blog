@@ -5,7 +5,7 @@ from django.conf import settings
 class Area(models.Model):
 	descricao = models.CharField(max_length=100)
 	cor = models.CharField(max_length=100)
-	status = models.BooleanField()
+	status = models.BooleanField() 
 
 	def ativar(self):
 		self.status = True
