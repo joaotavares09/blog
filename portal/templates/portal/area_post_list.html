@@ -7,10 +7,16 @@
 			<h3><a href="{% url 'area_post_new' %}">Nova Área</a></h3>
 			{% for post in posts %}
 				<div class="classe_Post">
-					<p class="classe_Publicado">Tipo de Notícia: {{ post.descricao }}</p>
+					<h2>Tipo de Área: {{ post.descricao }}</h2>
 					<h2><a href="{% url 'area_post_detail' pk=post.pk %}"></a></h2>
 					<p>{{ post.cor }}</p><br>
 					<p>{{ post.status }}</p>
+					<button>
+						<a href="{% url 'area_post_edit' pk=post.pk %}">Editar Área</a>
+					</button>
+					<button>
+						<a href="{% url 'area_post_remove' pk=post.pk %}">Deletar</a>
+					</button>
 				</div>	
 			{% endfor %}
 		</center>

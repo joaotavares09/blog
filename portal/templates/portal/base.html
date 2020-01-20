@@ -3,42 +3,45 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Portal Corrente</title>
+	<title>Portal Piauí</title>
 	<link rel="stylesheet" href="{% static 'css/portal.css' %}">
 </head>
 <body>
 
-	<header class="classe_Header">
+	<header class="Header">
+
 		<center>
-			<h1>Portal Corrente</h1>
+			<h1><img src="{% static 'imagens/logo1.png' %}" height="100" width="100" style="float: left;">Portal Piauí</h1>
 		</center>
+
 		<center>
 			<button type="button" class="btn btn-light">
-				<a class="classe_boton_link" href="{% url 'area_list' %}">Home</a>
+				<a class="classe_boton_link" href="{% url 'inicio' %}">Home</a>
 			</button>
-			{% if user.is_authenticated  %}
+			{% if user.is_authenticated %}
 				
-					{% if user.is_authenticated  %}
+					{% if user.is_authenticated %}
 						<button>
 							<a href="{% url 'area_new' %}">Postar Notícia</a>
 						</button>
 					{% endif %}
 				
-				<button>
+				<button type="button" class="btn btn-link">
 					<a class="classe_boton_link" href="{% url 'area_post_list' %}">Área</a>
 				</button>
 			{% endif %}
 		</center>
+
 	</header>
+	
+	<div class="conteudo">
+		{% block dinamico %}
+		{% endblock %}
+	</div>
 
-	{% block dinamico %}
-	{% endblock %}
-
-	<!-- {% block area %}
-	{% endblock %} -->
 	<footer class="classe_Footer">
 		<center>
-			<h3>Copyright ©Portal Corrente 2020</h3>
+			<h3>Copyright ©Portal Piauí 2020</h3>
 		</center>
 	</footer>
 </body>

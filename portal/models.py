@@ -9,21 +9,18 @@ class Area(models.Model):
 
 	def ativar(self):
 		self.status = True
-		return self.status
 		self.save()
-	# def __str__(self):
-	# 	return self.status
 
 	def desativar(self):
 		self.status = False
-		return self.status
 		self.save()
-	# def __str__(self):
-	# 	return self.status
+
+	def __str__(self):
+		return self.descricao
 
 class Noticia(models.Model):
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-	area = models.ForeignKey('Area', on_delete=models.CASCADE)
+	area = models.ForeignKey('Area', on_delete=models.SET_NULL, null=True)
 	title = models.CharField(max_length=200)
 	text = models.TextField()
 	created_date = models.DateTimeField(default=timezone.now)

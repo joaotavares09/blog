@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-	path('', views.area_list, name='area_list'),
+	path('', views.inicio, name='inicio'),
+	path('post/noticialist', views.area_list, name='area_list'),
 	path('post/list', views.area_post_list, name='area_post_list'),
 	
 	path('post/<int:pk>/', views.area_detail, name='area_detail'),

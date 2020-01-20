@@ -1,0 +1,27 @@
+{% extends 'portal/base.html' %}
+
+{% block dinamico %}
+
+	<div class="noticias_esporte">
+		{% for post in noticias_esporte %}
+			
+			{% if post.photo %}
+				<img class="img_editor" src="{{ post.photo.url }}" alt="title"/>
+			{% endif %}
+			<h2><a href="{% url 'area_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+
+		{% endfor %}
+	</div>
+
+	<div class="noticias_politica">
+		{% for post in noticias_politica %}
+			
+				{% if post.photo %}
+					<img class="img_editor" src="{{ post.photo.url }}" alt="title"/>
+				{% endif %}
+				<h2><a href="{% url 'area_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+			
+		{% endfor %}
+	</div>
+
+{% endblock %}

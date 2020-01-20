@@ -1,8 +1,8 @@
 body{
-	background-color: #E2F5F6;
+	background-color: #FAFAFA;
 }
 h1{
-	color: #E2F5F6;
+	color: white;
 	font-family:Arial, Helvetica, sans-serif;
 }
 h2{
@@ -15,32 +15,110 @@ h3{
 	font-family:Arial, Helvetica, sans-serif;
 }
 
-.classe_Header{
-	background-color: #051617;
-	padding: 30px;
-	margin: 0px 80px 0px 80px;
+/*---------------------------Area do Visitante*/
+
+
+
+.noticias_esporte a{
+	color: green;
+}
+.noticias_politica a{
+	color: red;
+}
+
+.noticias_esporte{
+	width: 35%;
+	padding-left: 10px;
+	padding-top: 20px;
+	color: green;
+	float: left;
+}
+.noticias_politica{
+	width: 35%;
+	padding-left: 10px;
+	padding-top: 20px;
+	color: red;
+	float: left;
+}
+.conteudo{
+	width: 90%;
+	float: top;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 0px;
+	/*margin: 0px 100px 0px 100px;*/
+}
+.img_editor{
+	width: 50%;
+}
+.bt_edit{
+	width: 90%;
+	height: 30px;
+}
+.topo{
+	width: 90%;
+	background-color: #1E90FF;
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 110px;
+}
+
+
+
+
+
+
+
+/*---------------------------Area do Visitante*/
+
+.Header{
+	background-color: #1E90FF;
+	padding: 15px;
+	margin: 0px 100px 0px 100px;
 }
 .classe_Post{
-	background-color: #D8D8D8;
+	background-color: #F2F2F2;
 	padding: 50px;
-	margin: 15px 80px 15px 80px;
+	margin: 15px 340px 15px 340px;
+  	border-color: #585858;
+  	border: 1px 1px 1px 1px;
 }
 .classe_Publicado{
 	float: right;
-	font-size: 13px;
+	font-size: 15px;
 }
 .classe_Footer{
+	width: 99%;
+	height: 90px;
+	float: left;
+	margin: 0px;
 	background-color: #051617;
 	padding: 10px;
-	margin: 15px 0px 15px 0px;
+	/*margin: 15px 0px 15px 0px;*/
 }
 .form{
 	background-color: #D8D8D8;
-	margin: 15px 80px 15px 80px;
+	margin: 15px 100px 15px 100px;
 	font-family:Arial, Helvetica, sans-serif;
 }
 .post-form{
 	background-color: #D8D8D8;
-	margin: 15px 80px 15px 80px;
+	margin: 15px 100px 15px 100px;
 	font-family:Arial, Helvetica, sans-serif;
 }
+/*
+
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: red;
+}
+.box {
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: silver;
+    width: calc((100% / 2) - 2rem);
+}*/

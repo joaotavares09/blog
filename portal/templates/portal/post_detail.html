@@ -15,6 +15,7 @@
 					<a class="classe_boton_link" href="{% url 'area_publicar' pk=post.pk %}"> Publicar </a>
 				</button>
 			{% endif %}<br><br><br>
+		{% endif %}
 				<div class="date">
 					{{ post.published_date }}
 				</div><br>
@@ -23,8 +24,6 @@
 				{% endif %}
 				<h2>{{ post.title }}</h2>
 				<p>{{ post.text|linebreaksbr }}</p>
-			{% else %}
-		{% endif %}
 	</div>
 </center>
 {% endblock %}
